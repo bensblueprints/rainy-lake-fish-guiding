@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Full Throttle Guiding — Rainy Lake, Minnesota</title>
+<meta name="description" content="Cody Christensen has guided walleye, bass, crappie, northern, and muskie on Rainy Lake and the Rainy River for thirty-two seasons. Book a day on the water at 218-240-2091.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f1a1d;
+  --paper:#f3ede1;
+  --paper-2:#ebe3d3;
+  --lake:#16333c;
+  --lake-deep:#0b1e24;
+  --moss:#3d5a3c;
+  --brass:#b98a3c;
+  --rust:#8a3a1c;
+  --rule:#2a2420;
+  --muted:#6b6258;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Instrument Sans",ui-sans-serif,system-ui,sans-serif;
+  font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+.serif{font-family:"Fraunces",serif;font-optical-sizing:auto}
+.italic-serif{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400}
+
+/* ── Grain overlay ──────────────────────────────────────── */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.06;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ── Top bar ────────────────────────────────────────────── */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 36px;
+  color:var(--paper);
+  mix-blend-mode:difference;
+  font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+}
+.topbar a{opacity:.85;transition:opacity .25s}
+.topbar a:hover{opacity:1}
+.topbar nav{display:flex;gap:28px}
+.brand{font-family:"Fraunces",serif;font-weight:500;font-size:18px;letter-spacing:.02em;text-transform:none}
+.brand em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;opacity:.8}
+.topbar .call{border:1px solid currentColor;padding:8px 14px;border-radius:999px}
+@media(max-width:820px){.topbar nav{display:none}.topbar{padding:18px 22px}}
+
+/* ── Hero ───────────────────────────────────────────────── */
+.hero{
+  position:relative;min-height:100vh;
+  background:#000;color:var(--paper);
+  overflow:hidden;
+  display:grid;grid-template-rows:1fr auto;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(11,30,36,.55) 0%,rgba(11,30,36,.15) 35%,rgba(11,30,36,.85) 100%);
+}
+.hero img.bg{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:saturate(.92) contrast(1.05);
+  transform:scale(1.04);
+  animation:drift 18s ease-in-out infinite alternate;
+}
+@keyframes drift{to{transform:scale(1.1) translateY(-1.5%)}}
+.hero-inner{position:relative;z-index:2;padding:160px 44px 60px;align-self:end;max-width:1400px;width:100%;margin:0 auto}
+.eyebrow{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;opacity:.85;margin-bottom:28px}
+.eyebrow .dot{width:6px;height:6px;background:var(--brass);border-radius:999px;box-shadow:0 0 0 4px rgba(185,138,60,.2)}
+.hero h1{
+  font-family:"Fraunces",serif;font-weight:400;
+  font-size:clamp(56px,10vw,172px);
+  line-height:.92;letter-spacing:-.025em;
+  font-variation-settings:"opsz" 144;
+}
+.hero h1 em{font-style:italic;font-weight:300;color:#e9d9b5}
+.hero-sub{
+  display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:end;
+  margin-top:44px;padding-top:28px;border-top:1px solid rgba(243,237,225,.25);
+}
+.hero-sub p{font-size:17px;max-width:44ch;opacity:.92}
+.hero-meta{display:flex;gap:44px;justify-content:flex-end;font-size:12px;letter-spacing:.22em;text-transform:uppercase;opacity:.8}
+.hero-meta span b{display:block;font-family:"Fraunces",serif;font-size:22px;font-weight:400;letter-spacing:0;text-transform:none;color:#e9d9b5;margin-top:6px}
+.hero-foot{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:22px 44px;border-top:1px solid rgba(243,237,225,.2);font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+.hero-badge{position:absolute;left:44px;top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:left top;z-index:2;color:var(--paper);font-size:10px;letter-spacing:.38em;text-transform:uppercase;opacity:.7;white-space:nowrap;display:flex;gap:20px;align-items:center}
+.hero-badge::before{content:"";width:30px;height:1px;background:var(--brass)}
+@media(max-width:900px){.hero-badge{display:none}}
+.scroll-indicator{display:flex;align-items:center;gap:10px}
+.scroll-indicator .line{width:40px;height:1px;background:currentColor;animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scaleX(1);opacity:.5}50%{transform:scaleX(.4);opacity:1}}
+@media(max-width:820px){
+  .hero-inner{padding:130px 22px 30px}
+  .hero-sub{grid-template-columns:1fr;gap:20px}
+  .hero-meta{justify-content:flex-start}
+  .hero-foot{padding:16px 22px;font-size:10px}
+}
+
+/* ── Sections ───────────────────────────────────────────── */
+section{padding:120px 44px;position:relative}
+.wrap{max-width:1280px;margin:0 auto}
+.section-head{display:grid;grid-template-columns:120px 1fr;gap:40px;align-items:baseline;margin-bottom:72px;border-top:1px solid var(--rule);padding-top:28px}
+.section-num{font-family:"Fraunces",serif;font-size:14px;letter-spacing:.2em;color:var(--muted)}
+.section-title{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(36px,5.4vw,80px);line-height:1;letter-spacing:-.02em}
+.section-title em{font-style:italic;color:var(--moss)}
+.section-kicker{grid-column:2;margin-top:18px;max-width:62ch;color:var(--muted);font-size:17px}
+@media(max-width:820px){section{padding:70px 22px}.section-head{grid-template-columns:1fr;gap:12px;margin-bottom:44px}.section-kicker{grid-column:1}}
+
+/* ── Intro editorial ────────────────────────────────────── */
+.intro{background:var(--paper)}
+.intro-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center}
+.intro-grid .lede{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(26px,3.2vw,44px);line-height:1.15;letter-spacing:-.015em}
+.intro-grid .lede em{font-family:"Instrument Serif",serif;font-style:italic;color:var(--lake)}
+.intro-grid figure{position:relative}
+.intro-grid figure img{aspect-ratio:4/5;object-fit:cover;filter:saturate(.9)}
+.intro-grid figcaption{position:absolute;bottom:-30px;left:-30px;background:var(--lake);color:var(--paper);padding:14px 18px;font-family:"Fraunces",serif;font-style:italic;max-width:260px;font-size:14px;line-height:1.4}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;margin-top:100px;border-top:1px solid var(--rule);padding-top:44px}
+.stat b{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(40px,5vw,72px);line-height:1;display:block;letter-spacing:-.02em}
+.stat span{display:block;margin-top:8px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.stat:nth-child(even) b{font-style:italic;color:var(--moss)}
+@media(max-width:820px){.intro-grid{grid-template-columns:1fr;gap:50px}.stats{grid-template-columns:1fr 1fr;gap:24px}}
+
+/* ── Species ────────────────────────────────────────────── */
+.species{background:var(--lake-deep);color:var(--paper)}
+.species .section-head{border-color:rgba(243,237,225,.2)}
+.species .section-num{color:#a9b9bd}
+.species .section-title em{color:#e9d9b5}
+.species-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;background:rgba(243,237,225,.15)}
+.species-card{position:relative;background:var(--lake-deep);padding:28px 22px 200px;min-height:380px;overflow:hidden;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.species-card img{position:absolute;inset:auto 0 0 0;width:100%;height:200px;object-fit:cover;filter:saturate(.85) brightness(.78);transition:transform 1.2s ease,filter .6s}
+.species-card:hover img{transform:scale(1.08);filter:saturate(1) brightness(.92)}
+.species-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:28px;letter-spacing:-.01em;margin-bottom:10px}
+.species-card h3 em{font-family:"Instrument Serif",serif;font-style:italic;color:#e9d9b5;display:block;font-size:14px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.species-card p{font-size:13px;opacity:.78;line-height:1.5}
+.species-card .size{position:absolute;top:22px;right:22px;font-family:"Fraunces",serif;font-size:13px;letter-spacing:.06em;color:var(--brass);border:1px solid rgba(185,138,60,.5);padding:4px 10px;border-radius:999px}
+@media(max-width:1100px){.species-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){.species-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ── Trips & Rates ──────────────────────────────────────── */
+.rates{background:var(--paper-2)}
+.menu{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start}
+.menu h3{font-family:"Fraunces",serif;font-weight:400;font-size:36px;margin-bottom:8px;letter-spacing:-.01em}
+.menu .caption{color:var(--muted);font-size:14px;margin-bottom:28px;letter-spacing:.04em}
+.menu ul{list-style:none}
+.menu li{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:baseline;padding:22px 0;border-bottom:1px dashed rgba(42,36,32,.25)}
+.menu li .name{font-family:"Fraunces",serif;font-size:22px;font-weight:400}
+.menu li .name small{display:block;color:var(--muted);font-family:"Instrument Sans",sans-serif;font-size:13px;letter-spacing:.04em;margin-top:4px;font-weight:400}
+.menu li .price{font-family:"Fraunces",serif;font-size:24px;color:var(--lake);font-style:italic;font-weight:400;white-space:nowrap}
+.menu aside{position:sticky;top:120px;background:var(--lake);color:var(--paper);padding:44px 36px;border-radius:2px}
+.menu aside h4{font-family:"Fraunces",serif;font-weight:400;font-size:28px;margin-bottom:18px;letter-spacing:-.01em}
+.menu aside h4 em{font-family:"Instrument Serif",serif;font-style:italic;color:#e9d9b5}
+.menu aside ul{list-style:none}
+.menu aside li{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid rgba(243,237,225,.15);font-size:14px;line-height:1.5}
+.menu aside li:last-child{border:none}
+.menu aside li::before{content:"◆";color:var(--brass);font-size:10px;padding-top:6px}
+.menu aside .cta{display:block;margin-top:28px;background:var(--paper);color:var(--ink);padding:18px;text-align:center;font-family:"Fraunces",serif;font-size:20px;letter-spacing:-.01em;transition:background .3s}
+.menu aside .cta:hover{background:var(--brass);color:var(--paper)}
+.menu aside .cta small{display:block;font-family:"Instrument Sans",sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:6px;opacity:.7}
+@media(max-width:900px){.menu{grid-template-columns:1fr;gap:40px}.menu aside{position:static}}
+
+/* ── Guide ──────────────────────────────────────────────── */
+.guide{background:var(--paper);position:relative;overflow:hidden}
+.guide::before{content:"CODY";position:absolute;top:-60px;left:-20px;font-family:"Fraunces",serif;font-size:clamp(200px,30vw,440px);font-weight:300;color:rgba(22,51,60,.05);line-height:1;letter-spacing:-.04em;pointer-events:none;font-style:italic}
+.guide-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center;position:relative;z-index:2}
+.guide-portrait{aspect-ratio:3/4;object-fit:cover;filter:saturate(.88) contrast(1.02)}
+.guide-body .pull{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(24px,2.6vw,36px);line-height:1.25;margin-bottom:32px;letter-spacing:-.01em}
+.guide-body .pull em{font-family:"Instrument Serif",serif;font-style:italic;color:var(--moss)}
+.guide-body p{color:var(--ink);font-size:17px;margin-bottom:18px;max-width:58ch}
+.guide-body p.attrib{margin-top:30px;font-family:"Fraunces",serif;font-style:italic;color:var(--muted);font-size:15px}
+.guide-kit{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;border-top:1px solid var(--rule);padding-top:28px}
+.guide-kit div b{font-family:"Fraunces",serif;font-weight:400;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px}
+.guide-kit div span{font-family:"Fraunces",serif;font-size:19px;line-height:1.3}
+@media(max-width:900px){.guide-grid{grid-template-columns:1fr;gap:40px}}
+
+/* ── Gallery strip ──────────────────────────────────────── */
+.gallery{background:var(--lake-deep);padding:0;color:var(--paper)}
+.gallery-head{padding:120px 44px 40px;max-width:1280px;margin:0 auto}
+.gallery-head .section-head{border-color:rgba(243,237,225,.2);margin-bottom:0}
+.gallery-head .section-num{color:#a9b9bd}
+.gallery-track{display:flex;gap:14px;padding:40px 44px 120px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.gallery-track::-webkit-scrollbar{height:6px}
+.gallery-track::-webkit-scrollbar-thumb{background:rgba(243,237,225,.25)}
+.gallery-track figure{flex:0 0 auto;width:min(440px,70vw);scroll-snap-align:start;position:relative}
+.gallery-track img{aspect-ratio:4/5;object-fit:cover;width:100%;filter:saturate(.92)}
+.gallery-track figcaption{margin-top:10px;font-family:"Fraunces",serif;font-style:italic;font-size:14px;display:flex;justify-content:space-between;opacity:.8}
+
+/* ── Testimonials ───────────────────────────────────────── */
+.praise{background:var(--paper-2)}
+.praise-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:28px}
+.quote{grid-column:span 4;background:var(--paper);padding:36px 32px;position:relative;border:1px solid var(--rule)}
+.quote:nth-child(3n+2){grid-column:span 5;background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.quote:nth-child(3n+3){grid-column:span 3;background:var(--moss);color:var(--paper);border-color:var(--moss)}
+.quote:nth-child(4){grid-column:span 6}
+.quote:nth-child(5){grid-column:span 6;background:var(--brass);color:var(--ink);border-color:var(--brass)}
+.quote::before{content:"“";position:absolute;top:-30px;left:20px;font-family:"Fraunces",serif;font-size:100px;line-height:1;font-style:italic;opacity:.5}
+.quote p{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(17px,1.5vw,22px);line-height:1.35;margin-bottom:22px}
+.quote p em{font-family:"Instrument Serif",serif;font-style:italic}
+.quote cite{font-style:normal;font-size:12px;letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+@media(max-width:900px){.quote,.quote:nth-child(n){grid-column:span 12}}
+
+/* ── Map / Location ─────────────────────────────────────── */
+.place{background:var(--paper);position:relative}
+.place-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+.place figure{position:relative;aspect-ratio:16/11;background:var(--lake);overflow:hidden}
+.place figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
+.place figure::after{content:"RAINY LAKE · 48°36′N 93°10′W";position:absolute;bottom:18px;left:18px;color:var(--paper);font-size:11px;letter-spacing:.22em;background:rgba(11,30,36,.6);padding:8px 12px}
+.place h3{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(30px,3.6vw,52px);line-height:1.05;margin-bottom:22px;letter-spacing:-.02em}
+.place h3 em{font-family:"Instrument Serif",serif;font-style:italic;color:var(--moss)}
+.place p{color:var(--muted);margin-bottom:14px;max-width:46ch}
+.place ul{list-style:none;margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.place li{padding:10px 0;border-top:1px solid rgba(42,36,32,.25);font-family:"Fraunces",serif;font-size:16px}
+.place li small{display:block;font-family:"Instrument Sans",sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;font-weight:400}
+@media(max-width:900px){.place-grid{grid-template-columns:1fr}}
+
+/* ── Book CTA ───────────────────────────────────────────── */
+.book{background:var(--ink);color:var(--paper);text-align:center;padding:160px 44px;position:relative;overflow:hidden}
+.book::before{content:"";position:absolute;inset:0;background:url("assets/dsc00242-copy.jpg") center/cover;opacity:.18;filter:grayscale(.5)}
+.book > *{position:relative;z-index:2}
+.book .eye{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:30px}
+.book h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(48px,8vw,144px);line-height:.95;letter-spacing:-.03em}
+.book h2 em{font-family:"Instrument Serif",serif;font-style:italic;color:#e9d9b5}
+.book .phone{display:inline-block;margin-top:48px;font-family:"Fraunces",serif;font-size:clamp(34px,5vw,64px);border-bottom:1px solid var(--brass);padding-bottom:6px;transition:color .3s,border-color .3s}
+.book .phone:hover{color:var(--brass)}
+.book .sub{margin-top:28px;font-size:14px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+
+/* ── Footer ─────────────────────────────────────────────── */
+footer{background:var(--lake-deep);color:var(--paper);padding:80px 44px 30px}
+.foot-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;border-bottom:1px solid rgba(243,237,225,.15);padding-bottom:50px}
+.foot-grid h5{font-family:"Fraunces",serif;font-weight:400;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#a9b9bd;margin-bottom:18px}
+.foot-grid ul{list-style:none;display:grid;gap:10px;font-size:15px}
+.foot-brand .mark{font-family:"Fraunces",serif;font-size:36px;font-weight:400;letter-spacing:-.01em;line-height:1;margin-bottom:12px}
+.foot-brand .mark em{font-family:"Instrument Serif",serif;font-style:italic;color:#e9d9b5}
+.foot-brand p{max-width:36ch;opacity:.8;font-size:15px}
+.colophon{max-width:1280px;margin:30px auto 0;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.55}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:30px}.colophon{flex-direction:column;gap:8px}}
+
+/* ── Species Galleries ──────────────────────────────────── */
+.sgal{background:var(--paper);padding-top:120px}
+.sgal-tabs{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:44px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:18px 0}
+.sgal-tab{
+  background:none;border:1px solid transparent;cursor:pointer;
+  font-family:"Fraunces",serif;font-weight:400;font-size:18px;letter-spacing:-.01em;
+  padding:10px 18px;color:var(--muted);transition:all .3s;
+}
+.sgal-tab em{font-family:"Instrument Serif",serif;font-style:italic;font-size:13px;letter-spacing:.18em;text-transform:uppercase;display:block;opacity:.7;margin-bottom:2px}
+.sgal-tab:hover{color:var(--ink)}
+.sgal-tab.on{background:var(--lake);color:var(--paper)}
+.sgal-tab.on em{color:var(--brass);opacity:1}
+.sgal-count{margin-left:auto;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);align-self:center;padding-right:10px}
+.sgal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-bottom:28px}
+.sgal-grid figure{position:relative;aspect-ratio:1;overflow:hidden;cursor:zoom-in;background:var(--lake-deep)}
+.sgal-grid img{width:100%;height:100%;object-fit:cover;filter:saturate(.9);transition:transform .8s ease,filter .4s}
+.sgal-grid figure:hover img{transform:scale(1.08);filter:saturate(1.05)}
+.sgal-grid figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(11,30,36,.6));opacity:0;transition:opacity .4s}
+.sgal-grid figure:hover::after{opacity:1}
+.sgal-more{display:block;margin:20px auto 0;background:none;border:1px solid var(--rule);padding:14px 28px;font-family:"Fraunces",serif;font-size:14px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.sgal-more:hover{background:var(--lake);color:var(--paper);border-color:var(--lake)}
+
+/* ── Lightbox ───────────────────────────────────────────── */
+.lb{position:fixed;inset:0;background:rgba(11,30,36,.96);z-index:200;display:none;align-items:center;justify-content:center;padding:40px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:min(1200px,94vw);max-height:90vh;object-fit:contain}
+.lb-close{position:absolute;top:24px;right:28px;color:var(--paper);font-family:"Fraunces",serif;font-size:28px;background:none;border:none;cursor:pointer;opacity:.7;transition:opacity .2s}
+.lb-close:hover{opacity:1}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:var(--paper);background:none;border:1px solid rgba(243,237,225,.35);width:52px;height:52px;border-radius:999px;font-family:"Fraunces",serif;font-size:22px;cursor:pointer;opacity:.6;transition:opacity .25s,background .25s}
+.lb-nav:hover{opacity:1;background:rgba(243,237,225,.1)}
+.lb-prev{left:28px}.lb-next{right:28px}
+.lb-count{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:var(--paper);font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.7}
+
+/* ── Booking form ──────────────────────────────────────── */
+.booking{background:var(--paper-2);position:relative;overflow:hidden}
+.booking::before{content:"REQUEST A DATE";position:absolute;top:50px;right:-40px;font-family:"Fraunces",serif;font-style:italic;font-weight:300;font-size:clamp(100px,14vw,200px);color:rgba(22,51,60,.06);letter-spacing:-.04em;white-space:nowrap;pointer-events:none;line-height:1}
+.booking-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start;position:relative;z-index:2}
+.booking-copy h3{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(32px,3.8vw,52px);line-height:1.05;margin-bottom:20px;letter-spacing:-.02em}
+.booking-copy h3 em{font-family:"Instrument Serif",serif;font-style:italic;color:var(--moss)}
+.booking-copy p{color:var(--muted);max-width:40ch;margin-bottom:18px}
+.booking-meta{margin-top:32px;border-top:1px solid var(--rule);padding-top:24px;display:grid;gap:14px}
+.booking-meta div b{font-family:"Fraunces",serif;font-weight:400;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:3px}
+.booking-meta div span{font-family:"Fraunces",serif;font-size:17px}
+form.book-form{background:var(--paper);padding:44px;border:1px solid var(--rule)}
+form.book-form .row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:18px}
+form.book-form .row.one{grid-template-columns:1fr}
+form.book-form label{display:block}
+form.book-form label b{display:block;font-family:"Fraunces",serif;font-weight:400;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+form.book-form input,form.book-form select,form.book-form textarea{
+  width:100%;background:transparent;border:none;border-bottom:1px solid var(--rule);
+  padding:10px 0;font-family:"Fraunces",serif;font-size:19px;color:var(--ink);
+  transition:border-color .3s;
+}
+form.book-form input:focus,form.book-form select:focus,form.book-form textarea:focus{outline:none;border-color:var(--lake)}
+form.book-form textarea{resize:vertical;min-height:80px;font-size:16px;font-family:"Instrument Sans",sans-serif}
+form.book-form select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M0 0l6 8 6-8z' fill='%236b6258'/></svg>");background-repeat:no-repeat;background-position:right 4px center;padding-right:22px}
+form.book-form button{
+  margin-top:30px;background:var(--ink);color:var(--paper);border:none;cursor:pointer;
+  padding:20px 28px;width:100%;
+  font-family:"Fraunces",serif;font-size:20px;letter-spacing:-.01em;
+  display:flex;justify-content:space-between;align-items:center;
+  transition:background .3s;
+}
+form.book-form button:hover{background:var(--lake)}
+form.book-form button small{font-family:"Instrument Sans",sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.6}
+form.book-form .note{margin-top:14px;font-size:12px;color:var(--muted);text-align:center}
+.form-success{display:none;padding:36px;background:var(--moss);color:var(--paper);text-align:center;font-family:"Fraunces",serif;font-size:22px;font-style:italic}
+.form-success.on{display:block}
+.form-success em{font-family:"Instrument Serif",serif}
+@media(max-width:900px){.booking-grid{grid-template-columns:1fr;gap:40px}form.book-form{padding:28px}form.book-form .row{grid-template-columns:1fr;gap:14px}}
+
+/* ── Reveal on scroll ───────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="#" class="brand">Full Throttle <em>Guiding</em></a>
+  <nav>
+    <a href="#waters">The Waters</a>
+    <a href="#species">Species</a>
+    <a href="#rates">Trips</a>
+    <a href="#guide">The Guide</a>
+    <a href="#praise">Praise</a>
+    <a href="#booking">Book</a>
+  </nav>
+  <a href="tel:2182402091" class="call">218 · 240 · 2091</a>
+</header>
+
+<!-- ══════════════════════ HERO ══════════════════════ -->
+<section class="hero">
+  <img class="bg" src="assets/dsc00258-copy.jpg" alt="Rainy Lake at first light">
+  <div class="hero-badge">Est. 1993 · USCG Licensed · Rainy Lake MN</div>
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="dot"></span>Rainy Lake & Rainy River · Minnesota–Ontario Border</div>
+    <h1>We find<br>the <em>fish.</em></h1>
+    <div class="hero-sub">
+      <p>Thirty-two seasons of Coast Guard–licensed guiding for walleye, smallmouth, crappie, northern, muskie, and sturgeon — on one of the largest, wildest lakes on the continent.</p>
+      <div class="hero-meta">
+        <span>Est.<b>1993</b></span>
+        <span>Species<b>7</b></span>
+        <span>Record Muskie<b>49″</b></span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-foot">
+    <div>Captain Cody Christensen — USCG Licensed</div>
+    <div class="scroll-indicator"><span>Scroll</span><span class="line"></span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ INTRO ══════════════════════ -->
+<section class="intro" id="waters">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">§ 01 — Prologue</div>
+      <h2 class="section-title">A day on the water, <em>done properly.</em></h2>
+      <p class="section-kicker">Rainy Lake spans 220,000 acres across the Minnesota–Ontario boundary. It is big water — remote bays, current seams, submerged reefs — and it rewards those who know it. We do.</p>
+    </div>
+    <div class="intro-grid reveal">
+      <p class="lede">“Your experience with me as your guide — whether we are in Canada or the United States — will be one of a <em>lifetime.</em> Adventure, scenery, excitement, and best of all: <em>fish.</em>”</p>
+      <figure>
+        <img src="assets/cody_1.jpg" alt="Captain Cody Christensen on Rainy Lake">
+        <figcaption>Cody Christensen, thirty-second season, photographed on the Rainy River.</figcaption>
+      </figure>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><b>32</b><span>Seasons Guiding</span></div>
+      <div class="stat reveal"><b>220k</b><span>Acres of Rainy</span></div>
+      <div class="stat reveal"><b>7</b><span>Target Species</span></div>
+      <div class="stat reveal"><b>100+</b><span>Fish Per Trip</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ SPECIES ══════════════════════ -->
+<section class="species" id="species">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">§ 02 — Quarry</div>
+      <h2 class="section-title">Seven species, <em>one compass.</em></h2>
+      <p class="section-kicker">From the abundant walleye schools of the open lake to the sturgeon of the river's deep holes — the water changes week by week, and so does the game plan.</p>
+    </div>
+    <div class="species-grid">
+      <article class="species-card">
+        <span class="size">Abundant</span>
+        <h3><em>Primary</em>Walleye</h3>
+        <p>The most abundant and targeted fish on Rainy — structure, current seams, and deep shoreline breaks.</p>
+        <img src="assets/dsc00382.jpg" alt="Walleye">
+      </article>
+      <article class="species-card">
+        <span class="size">18–22″</span>
+        <h3><em>Brown Bass</em>Smallmouth</h3>
+        <p>Muscular and mean — Rainy's smallmouth are a highlight for summer sight-fishing and topwater.</p>
+        <img src="assets/dsc00396.jpeg" alt="Smallmouth Bass">
+      </article>
+      <article class="species-card">
+        <span class="size">38–45″</span>
+        <h3><em>Water Wolf</em>Northern Pike</h3>
+        <p>Ambush predators prowling the weed lines. Large, toothy, and reliably aggressive.</p>
+        <img src="assets/dsc00281.jpeg" alt="Northern Pike">
+      </article>
+      <article class="species-card">
+        <span class="size">Panfish</span>
+        <h3><em>Specks</em>Crappie</h3>
+        <p>Spring slabs in the warming bays. Light-tackle fun with the kind of table fare that ends every trip well.</p>
+        <img src="assets/dsc00263.jpeg" alt="Crappie">
+      </article>
+      <article class="species-card">
+        <span class="size">38–49″+</span>
+        <h3><em>Apex</em>Muskie</h3>
+        <p>The fish of ten thousand casts — until you ride with someone who's put thousands of boats on them.</p>
+        <img src="assets/dsc00555.jpeg" alt="Muskie">
+      </article>
+      <article class="species-card">
+        <span class="size">45–70″</span>
+        <h3><em>Pleistocene</em>Sturgeon</h3>
+        <p>Spring on the Rainy River — dinosaurs in dark water. Fish over 100 pounds are a real possibility.</p>
+        <img src="assets/dsc00618_1.jpg" alt="Sturgeon">
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ SPECIES GALLERIES ══════════════════════ -->
+<section class="sgal" id="catches">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">§ 02½ — Catches</div>
+      <h2 class="section-title">The <em>gallery.</em></h2>
+      <p class="section-kicker">A filter-by-species archive from Cody's camera roll. Tap any frame to see it full size.</p>
+    </div>
+    <div class="sgal-tabs" role="tablist">
+      <button class="sgal-tab on" data-species="walleye" role="tab"><em>Primary</em>Walleye</button>
+      <button class="sgal-tab" data-species="bass" role="tab"><em>Smallmouth</em>Bass</button>
+      <button class="sgal-tab" data-species="muskie" role="tab"><em>Apex</em>Muskie</button>
+      <button class="sgal-tab" data-species="northern-pike" role="tab"><em>Water Wolf</em>Northern</button>
+      <button class="sgal-tab" data-species="crappie" role="tab"><em>Specks</em>Crappie</button>
+      <button class="sgal-tab" data-species="sturgeon" role="tab"><em>Pleistocene</em>Sturgeon</button>
+      <button class="sgal-tab" data-species="trout" role="tab"><em>Cold Water</em>Trout</button>
+      <span class="sgal-count" id="sgal-count"></span>
+    </div>
+    <div class="sgal-grid" id="sgal-grid"></div>
+    <button class="sgal-more" id="sgal-more" hidden>Load more</button>
+  </div>
+</section>
+
+<!-- ══════════════════════ RATES ══════════════════════ -->
+<section class="rates" id="rates">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">§ 03 — Arrangements</div>
+      <h2 class="section-title">Trips &amp; <em>Rates.</em></h2>
+      <p class="section-kicker">Full days are 7:30 a.m. to 4:30 p.m. Bait and fuel billed at cost. Shore lunch available on request — few things pair better with August walleye than hot oil and a cast-iron pan.</p>
+    </div>
+    <div class="menu reveal">
+      <div>
+        <h3>Lake &amp; River</h3>
+        <p class="caption">Full-day guided charters aboard a 2021 Ranger 1880 · 200hp Yamaha</p>
+        <ul>
+          <li><span class="name">Two Anglers<small>Full day · bait &amp; fuel at cost</small></span><span class="price">$550</span></li>
+          <li><span class="name">Three Anglers<small>Full day · bait &amp; fuel at cost</small></span><span class="price">$625</span></li>
+          <li><span class="name">Four Anglers<small>Full day · bait &amp; fuel at cost</small></span><span class="price">$675</span></li>
+          <li><span class="name">Spring River Sturgeon<small>1–3 anglers · all-inclusive</small></span><span class="price">$550</span></li>
+          <li><span class="name">Follow Boat<small>Group add-on</small></span><span class="price">$50</span></li>
+          <li><span class="name">Shore Lunch<small>Per person · weather permitting</small></span><span class="price">$20</span></li>
+          <li><span class="name">Boat Rental<small>Lund ProV · 150 Suzuki · fully rigged</small></span><span class="price">$375–450</span></li>
+        </ul>
+      </div>
+      <aside>
+        <h4>What to <em>bring.</em></h4>
+        <ul>
+          <li>Rain gear, proper layers for variable lake weather</li>
+          <li>Polarized sunglasses — non-negotiable on Rainy</li>
+          <li>A camera you're not afraid of getting wet</li>
+          <li>Valid Minnesota or Ontario fishing license</li>
+          <li>Rods, reels, tackle, and electronics are provided</li>
+        </ul>
+        <a href="tel:2182402091" class="cta">
+          <small>Book a trip</small>
+          218 · 240 · 2091
+        </a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ GUIDE ══════════════════════ -->
+<section class="guide" id="guide">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">§ 04 — The Guide</div>
+      <h2 class="section-title">Captain <em>Cody Christensen.</em></h2>
+      <p class="section-kicker">A Coast Guard–licensed guide and lifelong student of Rainy Lake's moods — the water, the weather, and the fish that read both.</p>
+    </div>
+    <div class="guide-grid">
+      <img src="assets/cody-banner-01-01.jpg" class="guide-portrait" alt="Cody Christensen, fishing guide">
+      <div class="guide-body">
+        <p class="pull">“What I love the most about guiding is watching a client catch the biggest fish of their life. I love the <em>smiles on their faces.</em>”</p>
+        <p>Cody has guided on Rainy Lake and the Rainy River for thirty-two seasons. He is a Coast Guard–licensed Captain running a 2021 Ranger 1880 with a 200 hp Yamaha, top-of-the-line electronics, and Fenwick rods paired with President reels — all provided.</p>
+        <p>He specializes in walleye, bass, crappie, northern, and muskie, and runs the spring sturgeon program on the Rainy River. Whether you're new to the water or a lifelong angler, the day ends the same way.</p>
+        <p class="attrib">— “No matter what, by the end of the day I always find the fish.”</p>
+        <div class="guide-kit">
+          <div><b>The Boat</b><span>2021 Ranger 1880 · 200 hp Yamaha</span></div>
+          <div><b>The Tackle</b><span>Fenwick rods · Pflueger President reels</span></div>
+          <div><b>The License</b><span>USCG Licensed Captain</span></div>
+          <div><b>The Waters</b><span>Rainy Lake · Rainy River · MN / ON</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ GALLERY ══════════════════════ -->
+<section class="gallery">
+  <div class="gallery-head">
+    <div class="section-head">
+      <div class="section-num">§ 05 — Field Notes</div>
+      <h2 class="section-title">From the <em>boat.</em></h2>
+      <p class="section-kicker">A recent page of the logbook.</p>
+    </div>
+  </div>
+  <div class="gallery-track">
+    <figure><img src="assets/sturgeon_orig.jpg" alt=""><figcaption><span>Sturgeon · Rainy River</span><span>Spring</span></figcaption></figure>
+    <figure><img src="assets/dsc00018_orig.jpg" alt=""><figcaption><span>Big water</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc00114_orig.jpg" alt=""><figcaption><span>Morning run</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc00151_orig.jpg" alt=""><figcaption><span>Islands</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc00165_orig.jpg" alt=""><figcaption><span>Reef line</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc00190_orig.jpg" alt=""><figcaption><span>Shoreline</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc00267_orig.jpg" alt=""><figcaption><span>Caught</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc00386_orig.jpg" alt=""><figcaption><span>The log</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc00439_orig.jpg" alt=""><figcaption><span>A good morning</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc00512_orig.jpg" alt=""><figcaption><span>Evening bite</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc00532_orig.jpg" alt=""><figcaption><span>On the troll</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc00566_orig.jpg" alt=""><figcaption><span>In hand</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc00904_orig.jpg" alt=""><figcaption><span>The rocks</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc00992_orig.jpg" alt=""><figcaption><span>Cobalt</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc01114_orig.jpg" alt=""><figcaption><span>Back cove</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc01238_orig.jpg" alt=""><figcaption><span>Northern</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc01264_orig.jpg" alt=""><figcaption><span>Captain's chair</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/one-person_orig.jpg" alt=""><figcaption><span>Solo charter</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/three-people_orig.jpg" alt=""><figcaption><span>Three-angler day</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/four-people_orig.jpg" alt=""><figcaption><span>Four-angler day</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc00371-2-orig_orig.jpg" alt=""><figcaption><span>Shore lunch</span><span>—</span></figcaption></figure>
+    <figure><img src="assets/dsc00595_1_orig.jpg" alt=""><figcaption><span>Surrounding waters</span><span>—</span></figcaption></figure>
+  </div>
+</section>
+
+<!-- ══════════════════════ PRAISE ══════════════════════ -->
+<section class="praise" id="praise">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">§ 06 — Praise</div>
+      <h2 class="section-title">What the <em>clients say.</em></h2>
+      <p class="section-kicker">Unedited, in their words.</p>
+    </div>
+    <div class="praise-grid">
+      <blockquote class="quote"><p>That was the <em>best walleye fishing</em> ever! Can't wait to go next year. Thanks again!</p><cite>— Sam</cite></blockquote>
+      <blockquote class="quote"><p>You said it only takes one fish to make a great day of fishing for muskie, and sure enough fifteen minutes later we caught a <em>pig</em> — the muskie of a lifetime.</p><cite>— Jack Haveluck</cite></blockquote>
+      <blockquote class="quote"><p>Sore arms, big smiles. Over a hundred fish in a day.</p><cite>— Chuck</cite></blockquote>
+      <blockquote class="quote"><p>Cody, we had a great time on the river for sturgeon. I couldn't believe we caught <em>fifteen over forty-five inches</em> in one day — let alone a triple and the big sixty-two-incher. Can't wait till next season.</p><cite>— Rick D.</cite></blockquote>
+      <blockquote class="quote"><p>I've fished bass my whole life in all different parts of the U.S., and that was <em>one of the best three days</em> of bass fishing I have ever had.</p><cite>— Anonymous</cite></blockquote>
+      <blockquote class="quote"><p>It seems like the fishing gets better every year.</p><cite>— Rich B.</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ PLACE ══════════════════════ -->
+<section class="place">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">§ 07 — The Place</div>
+      <h2 class="section-title">Rainy Lake &amp; <em>River.</em></h2>
+    </div>
+    <div class="place-grid">
+      <figure><img src="assets/dsc00065-copy.jpg" alt="Rainy Lake shoreline"></figure>
+      <div>
+        <h3>Two-hundred-twenty-thousand <em>acres</em> of public water — straddling the line between Minnesota and Ontario.</h3>
+        <p>The lake holds more than 2,500 islands, coldwater structure, and some of the continent's most durable trophy fisheries. In spring the Rainy River runs thick with sturgeon and walleye; by midsummer the smallmouth and muskie light up the rocks.</p>
+        <ul>
+          <li><small>Location</small>International Falls, MN</li>
+          <li><small>Surface Area</small>220,000 acres</li>
+          <li><small>Max Depth</small>161 ft</li>
+          <li><small>Islands</small>2,500+</li>
+          <li><small>Seasons</small>Open water · May – October</li>
+          <li><small>Border</small>MN / ON</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ BOOKING FORM ══════════════════════ -->
+<section class="booking" id="booking">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">§ 08 — Booking</div>
+      <h2 class="section-title">Request a <em>date.</em></h2>
+      <p class="section-kicker">Send a note and Cody will call back to confirm bait, meet-up, and a weather plan. Peak dates (June walleye, August muskie, spring sturgeon) fill first — reach out early.</p>
+    </div>
+    <div class="booking-grid">
+      <div class="booking-copy">
+        <h3>A short note, <em>and we'll call.</em></h3>
+        <p>The faster way is the phone. The form works too — include a rough date window and party size and Cody will confirm within a day.</p>
+        <div class="booking-meta">
+          <div><b>Phone</b><span><a href="tel:2182402091">218 · 240 · 2091</a></span></div>
+          <div><b>Based</b><span>International Falls, MN</span></div>
+          <div><b>Season</b><span>May – October · open water</span></div>
+          <div><b>Deposit</b><span>Discussed by phone on booking</span></div>
+        </div>
+      </div>
+
+      <form class="book-form" name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" id="bookForm">
+        <input type="hidden" name="form-name" value="booking">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+        <div class="row">
+          <label><b>Your name</b><input type="text" name="name" required></label>
+          <label><b>Party size</b>
+            <select name="party" required>
+              <option value="">Select</option>
+              <option>1 angler</option>
+              <option>2 anglers</option>
+              <option>3 anglers</option>
+              <option>4 anglers</option>
+              <option>5+ (follow boat)</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label><b>Email</b><input type="email" name="email" required></label>
+          <label><b>Phone</b><input type="tel" name="phone" required></label>
+        </div>
+        <div class="row">
+          <label><b>Preferred date</b><input type="date" name="date"></label>
+          <label><b>Target species</b>
+            <select name="species">
+              <option>Guide's choice</option>
+              <option>Walleye</option>
+              <option>Smallmouth Bass</option>
+              <option>Muskie</option>
+              <option>Northern Pike</option>
+              <option>Crappie</option>
+              <option>Spring Sturgeon (River)</option>
+              <option>Mixed bag</option>
+            </select>
+          </label>
+        </div>
+        <div class="row one">
+          <label><b>Anything else?</b><textarea name="notes" placeholder="First time on Rainy? Shore lunch? Kids along? Tell Cody anything helpful."></textarea></label>
+        </div>
+        <button type="submit">Request this trip <small>↗</small></button>
+        <p class="note">We'll never share your info. Replies within 24 hours.</p>
+      </form>
+      <div class="form-success" id="formSuccess">Thanks — your request is in. <em>Cody will be in touch shortly.</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ BOOK ══════════════════════ -->
+<section class="book" id="book">
+  <div class="eye">Ready when you are</div>
+  <h2>Call the <em>boat.</em></h2>
+  <a href="tel:2182402091" class="phone">218 · 240 · 2091</a>
+  <div class="sub">Captain Cody Christensen · Rainy Lake, MN</div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="mark">Full Throttle <em>Guiding</em></div>
+      <p>Licensed captain and full-service guiding on Rainy Lake and the Rainy River since 1993.</p>
+    </div>
+    <div>
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="#waters">The Waters</a></li>
+        <li><a href="#species">Species</a></li>
+        <li><a href="#rates">Trips &amp; Rates</a></li>
+        <li><a href="#guide">The Guide</a></li>
+        <li><a href="#praise">Praise</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:2182402091">218 · 240 · 2091</a></li>
+        <li>International Falls, MN</li>
+        <li>Open water · May – Oct</li>
+      </ul>
+    </div>
+    <div>
+      <h5>Waters</h5>
+      <ul>
+        <li>Rainy Lake</li>
+        <li>Rainy River</li>
+        <li>Namakan &amp; surrounding</li>
+      </ul>
+    </div>
+  </div>
+  <div class="colophon">
+    <span>© 1993–2026 Full Throttle Guiding</span>
+    <span>USCG Licensed · MN Guide</span>
+  </div>
+</footer>
+
+<!-- ══════════════════════ LIGHTBOX ══════════════════════ -->
+<div class="lb" id="lb" role="dialog" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">›</button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
+<script src="assets/gallery/manifest.js" defer></script>
+<script>
+  // Reveal
+  const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("in")),{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+  // Species galleries
+  const PAGE=24;
+  let current="walleye", shown=PAGE, images=[];
+  const grid=document.getElementById("sgal-grid");
+  const more=document.getElementById("sgal-more");
+  const count=document.getElementById("sgal-count");
+
+  function render(){
+    const list=(window.GALLERY||{})[current]||[];
+    images=list;
+    count.textContent=`${list.length} frames`;
+    grid.innerHTML="";
+    list.slice(0,shown).forEach((src,i)=>{
+      const f=document.createElement("figure");
+      f.innerHTML=`<img loading="lazy" src="${src}" alt="">`;
+      f.addEventListener("click",()=>openLb(i));
+      grid.appendChild(f);
+    });
+    more.hidden = shown>=list.length;
+  }
+  function switchTo(sp){
+    current=sp;shown=PAGE;
+    document.querySelectorAll(".sgal-tab").forEach(b=>b.classList.toggle("on",b.dataset.species===sp));
+    render();
+  }
+  document.querySelectorAll(".sgal-tab").forEach(b=>b.addEventListener("click",()=>switchTo(b.dataset.species)));
+  more.addEventListener("click",()=>{shown+=PAGE;render()});
+
+  // Lightbox
+  const lb=document.getElementById("lb"), lbImg=document.getElementById("lbImg"), lbC=document.getElementById("lbCount");
+  let lbIdx=0;
+  function openLb(i){lbIdx=i;lbImg.src=images[i];lbC.textContent=`${i+1} / ${images.length}`;lb.classList.add("on")}
+  function closeLb(){lb.classList.remove("on")}
+  function nav(d){lbIdx=(lbIdx+d+images.length)%images.length;lbImg.src=images[lbIdx];lbC.textContent=`${lbIdx+1} / ${images.length}`}
+  document.getElementById("lbClose").onclick=closeLb;
+  document.getElementById("lbPrev").onclick=e=>{e.stopPropagation();nav(-1)};
+  document.getElementById("lbNext").onclick=e=>{e.stopPropagation();nav(1)};
+  lb.addEventListener("click",e=>{if(e.target===lb||e.target===lbImg)closeLb()});
+  document.addEventListener("keydown",e=>{if(!lb.classList.contains("on"))return;if(e.key==="Escape")closeLb();if(e.key==="ArrowRight")nav(1);if(e.key==="ArrowLeft")nav(-1)});
+
+  // Wait for manifest to load, then render
+  window.addEventListener("load",()=>render());
+
+  // Booking form (progressive enhancement for local preview)
+  const bf=document.getElementById("bookForm"), fs=document.getElementById("formSuccess");
+  bf.addEventListener("submit",e=>{
+    if(location.protocol==="file:"){
+      e.preventDefault();
+      bf.style.display="none"; fs.classList.add("on");
+    }
+  });
+</script>
+</body>
+</html>
