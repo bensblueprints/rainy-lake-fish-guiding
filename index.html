@@ -202,17 +202,23 @@ section{padding:120px 44px;position:relative}
 
 /* ── Testimonials ───────────────────────────────────────── */
 .praise{background:var(--paper-2)}
-.praise-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:28px}
-.quote{grid-column:span 4;background:var(--paper);padding:36px 32px;position:relative;border:1px solid var(--rule)}
-.quote:nth-child(3n+2){grid-column:span 5;background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.quote:nth-child(3n+3){grid-column:span 3;background:var(--moss);color:var(--paper);border-color:var(--moss)}
-.quote:nth-child(4){grid-column:span 6}
-.quote:nth-child(5){grid-column:span 6;background:var(--brass);color:var(--ink);border-color:var(--brass)}
-.quote::before{content:"“";position:absolute;top:-30px;left:20px;font-family:"Fraunces",serif;font-size:100px;line-height:1;font-style:italic;opacity:.5}
-.quote p{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(17px,1.5vw,22px);line-height:1.35;margin-bottom:22px}
-.quote p em{font-family:"Instrument Serif",serif;font-style:italic}
-.quote cite{font-style:normal;font-size:12px;letter-spacing:.22em;text-transform:uppercase;opacity:.75}
-@media(max-width:900px){.quote,.quote:nth-child(n){grid-column:span 12}}
+.praise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.quote{background:var(--paper);border:1px solid var(--rule);display:flex;flex-direction:column;overflow:hidden;position:relative;transition:transform .4s ease,box-shadow .4s ease}
+.quote:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,30,36,.15)}
+.quote .catch{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--lake-deep)}
+.quote .catch img{width:100%;height:100%;object-fit:cover;filter:saturate(.92);transition:transform .8s ease}
+.quote:hover .catch img{transform:scale(1.05)}
+.quote .catch-tag{position:absolute;top:14px;left:14px;background:var(--ink);color:var(--paper);font-family:"Fraunces",serif;font-size:12px;letter-spacing:.08em;padding:6px 11px;font-style:italic}
+.quote .catch-btn{position:absolute;bottom:14px;right:14px;background:var(--paper);color:var(--ink);border:none;cursor:pointer;font-family:"Fraunces",serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:10px 14px;display:flex;align-items:center;gap:8px;transition:background .3s,color .3s}
+.quote .catch-btn:hover{background:var(--brass);color:var(--paper)}
+.quote .catch-btn::after{content:"↗";font-style:normal}
+.quote .body{padding:32px 28px 26px;position:relative;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.quote .body::before{content:"“";position:absolute;top:-8px;left:20px;font-family:"Fraunces",serif;font-size:84px;line-height:1;font-style:italic;color:var(--brass);opacity:.5}
+.quote p{font-family:"Fraunces",serif;font-weight:300;font-size:18px;line-height:1.4;margin-bottom:22px;position:relative;padding-top:18px}
+.quote p em{font-family:"Instrument Serif",serif;font-style:italic;color:var(--lake)}
+.quote cite{font-style:normal;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);border-top:1px solid rgba(42,36,32,.2);padding-top:14px;display:block}
+.quote cite b{font-family:"Fraunces",serif;font-weight:500;font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink);display:block;margin-bottom:2px}
+@media(max-width:900px){.praise-grid{grid-template-columns:1fr;gap:24px}}
 
 /* ── Map / Location ─────────────────────────────────────── */
 .place{background:var(--paper);position:relative}
@@ -573,12 +579,89 @@ form.book-form .note{margin-top:14px;font-size:12px;color:var(--muted);text-alig
       <p class="section-kicker">Unedited, in their words.</p>
     </div>
     <div class="praise-grid">
-      <blockquote class="quote"><p>That was the <em>best walleye fishing</em> ever! Can't wait to go next year. Thanks again!</p><cite>— Sam</cite></blockquote>
-      <blockquote class="quote"><p>You said it only takes one fish to make a great day of fishing for muskie, and sure enough fifteen minutes later we caught a <em>pig</em> — the muskie of a lifetime.</p><cite>— Jack Haveluck</cite></blockquote>
-      <blockquote class="quote"><p>Sore arms, big smiles. Over a hundred fish in a day.</p><cite>— Chuck</cite></blockquote>
-      <blockquote class="quote"><p>Cody, we had a great time on the river for sturgeon. I couldn't believe we caught <em>fifteen over forty-five inches</em> in one day — let alone a triple and the big sixty-two-incher. Can't wait till next season.</p><cite>— Rick D.</cite></blockquote>
-      <blockquote class="quote"><p>I've fished bass my whole life in all different parts of the U.S., and that was <em>one of the best three days</em> of bass fishing I have ever had.</p><cite>— Anonymous</cite></blockquote>
-      <blockquote class="quote"><p>It seems like the fishing gets better every year.</p><cite>— Rich B.</cite></blockquote>
+      <blockquote class="quote">
+        <div class="catch">
+          <img src="assets/dsc00371-2-orig_orig.jpg" alt="Sam's walleye catch">
+          <span class="catch-tag">Walleye</span>
+          <button class="catch-btn" data-img="assets/dsc00371-2-orig_orig.jpg">View the catch</button>
+        </div>
+        <div class="body">
+          <p>That was the <em>best walleye fishing</em> ever! Can't wait to go next year. Thanks again!</p>
+          <cite><b>Sam</b>Return guest</cite>
+        </div>
+      </blockquote>
+
+      <blockquote class="quote">
+        <div class="catch">
+          <img src="assets/dsc00242_orig.jpg" alt="Jack Haveluck's 52-inch muskie">
+          <span class="catch-tag">52″ Muskie</span>
+          <button class="catch-btn" data-img="assets/dsc00242_orig.jpg">View the catch</button>
+        </div>
+        <div class="body">
+          <p>You said it only takes one fish to make a great day of fishing for muskie, and sure enough fifteen minutes later we caught a <em>pig</em> — the muskie of a lifetime.</p>
+          <cite><b>Jack Haveluck</b>Muskie angler</cite>
+        </div>
+      </blockquote>
+
+      <blockquote class="quote">
+        <div class="catch">
+          <img src="assets/one-person_orig.jpg" alt="Chuck's 29-inch walleye">
+          <span class="catch-tag">29″ Walleye</span>
+          <button class="catch-btn" data-img="assets/one-person_orig.jpg">View the catch</button>
+        </div>
+        <div class="body">
+          <p>Never thought you'd catch over <em>a hundred fish</em> in a day, like you said — but you proved me wrong. Sore arms, big smiles, and already looking forward to next year.</p>
+          <cite><b>Chuck</b>Group charter</cite>
+        </div>
+      </blockquote>
+
+      <blockquote class="quote">
+        <div class="catch">
+          <img src="assets/dsc00512_orig.jpg" alt="Rick D.'s sturgeon">
+          <span class="catch-tag">3 Sturgeon 45″+</span>
+          <button class="catch-btn" data-img="assets/dsc00512_orig.jpg">View the catch</button>
+        </div>
+        <div class="body">
+          <p>We had a great time on the river for sturgeon. I couldn't believe we caught <em>fifteen over forty-five inches</em> in one day — let alone a triple and the big sixty-two-incher. Can't wait till next season.</p>
+          <cite><b>Rick D.</b>Spring sturgeon</cite>
+        </div>
+      </blockquote>
+
+      <blockquote class="quote">
+        <div class="catch">
+          <img src="assets/dsc00571.jpeg" alt="Rich B's 50-inch muskie">
+          <span class="catch-tag">50″ Muskie</span>
+          <button class="catch-btn" data-img="assets/dsc00571.jpeg">View the catch</button>
+        </div>
+        <div class="body">
+          <p>It seems like the fishing gets <em>better every year.</em> Thanks for a great trip — my son and I have never caught so many big fish in a day.</p>
+          <cite><b>Rich B.</b>Father-son trip</cite>
+        </div>
+      </blockquote>
+
+      <blockquote class="quote">
+        <div class="catch">
+          <img src="assets/dsc00373.jpeg" alt="Norbert's 48.5-inch muskie">
+          <span class="catch-tag">48.5″ Muskie</span>
+          <button class="catch-btn" data-img="assets/dsc00373.jpeg">View the catch</button>
+        </div>
+        <div class="body">
+          <p>Cody, thanks for being a great guide and friend. You make our trip every year better and better — a <em>forty-eight-inch muskie</em> on my first muskie trip isn't bad.</p>
+          <cite><b>Norbert</b>Annual return</cite>
+        </div>
+      </blockquote>
+
+      <blockquote class="quote">
+        <div class="catch">
+          <img src="assets/dsc00528.jpeg" alt="Smallmouth bass catch">
+          <span class="catch-tag">Smallmouth</span>
+          <button class="catch-btn" data-img="assets/dsc00528.jpeg">View the catch</button>
+        </div>
+        <div class="body">
+          <p>I've fished bass my whole life in all different parts of the U.S., and that was <em>one of the best three days</em> of bass fishing I have ever had.</p>
+          <cite><b>Anonymous</b>Lifetime bass angler</cite>
+        </div>
+      </blockquote>
     </div>
   </div>
 </section>
@@ -778,6 +861,20 @@ form.book-form .note{margin-top:14px;font-size:12px;color:var(--muted);text-alig
 
   // Wait for manifest to load, then render
   window.addEventListener("load",()=>render());
+
+  // "View the catch" buttons → open image in lightbox
+  document.querySelectorAll(".catch-btn").forEach(btn=>{
+    btn.addEventListener("click",e=>{
+      e.stopPropagation();
+      images=[btn.dataset.img];
+      openLb(0);
+    });
+  });
+  // Clicking the catch image itself also opens it
+  document.querySelectorAll(".quote .catch img").forEach(img=>{
+    img.style.cursor="zoom-in";
+    img.addEventListener("click",()=>{images=[img.getAttribute("src")];openLb(0)});
+  });
 
   // Booking form (progressive enhancement for local preview)
   const bf=document.getElementById("bookForm"), fs=document.getElementById("formSuccess");
