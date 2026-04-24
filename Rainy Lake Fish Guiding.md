@@ -2,7 +2,9 @@
 
 **Status:** 🔄 In Progress — design v2 (local prototype)
 **Type:** Website redesign (speculative / pitch)
-**Hosted:** ❌ Not deployed — local-only prototype at `C:\Users\HP\Documents\working\Projects\Rainy Lake Fish Guiding\index.html`. Not on [[Contabo VPS 2 - Coolify|Coolify]], not on Netlify yet. Candidate for Coolify once pitch is accepted (shared API token `9|leesferry2026`).
+**Hosted:** ✅ [[Contabo VPS 2 - Coolify|Coolify]] — https://rainylake.advancedmarketing.co
+**Repo:** https://github.com/bensblueprints/rainy-lake-fish-guiding
+**Coolify UUID:** `yxkhkfh8n7y8gn23dpu6l2rk`
 **URL (source):** https://www.rainylakefishguiding.com/
 **URL (inspiration):** https://rainylake.org/
 **Started:** 2026-04-24

@@ -176,6 +176,9 @@ section{padding:120px 44px;position:relative}
 .guide::before{content:"CODY";position:absolute;top:-60px;left:-20px;font-family:"Fraunces",serif;font-size:clamp(200px,30vw,440px);font-weight:300;color:rgba(22,51,60,.05);line-height:1;letter-spacing:-.04em;pointer-events:none;font-style:italic}
 .guide-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center;position:relative;z-index:2}
 .guide-portrait{aspect-ratio:3/4;object-fit:cover;filter:saturate(.88) contrast(1.02)}
+.guide-visuals{display:grid;gap:14px}
+.guide-visuals img.boat{aspect-ratio:16/10;object-fit:cover;filter:saturate(.92) contrast(1.03)}
+.guide-visuals figcaption{font-family:"Fraunces",serif;font-style:italic;font-size:13px;color:var(--muted);margin-top:-4px}
 .guide-body .pull{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(24px,2.6vw,36px);line-height:1.25;margin-bottom:32px;letter-spacing:-.01em}
 .guide-body .pull em{font-family:"Instrument Serif",serif;font-style:italic;color:var(--moss)}
 .guide-body p{color:var(--ink);font-size:17px;margin-bottom:18px;max-width:58ch}
@@ -371,7 +374,7 @@ form.book-form .note{margin-top:14px;font-size:12px;color:var(--muted);text-alig
     <div class="intro-grid reveal">
       <p class="lede">“Your experience with me as your guide — whether we are in Canada or the United States — will be one of a <em>lifetime.</em> Adventure, scenery, excitement, and best of all: <em>fish.</em>”</p>
       <figure>
-        <img src="assets/cody_1.jpg" alt="Captain Cody Christensen on Rainy Lake">
+        <img src="assets/captain-cody.jpg" alt="Captain Cody Christensen on Rainy Lake">
         <figcaption>Cody Christensen, thirty-second season, photographed on the Rainy River.</figcaption>
       </figure>
     </div>
@@ -505,7 +508,11 @@ form.book-form .note{margin-top:14px;font-size:12px;color:var(--muted);text-alig
       <p class="section-kicker">A Coast Guard–licensed guide and lifelong student of Rainy Lake's moods — the water, the weather, and the fish that read both.</p>
     </div>
     <div class="guide-grid">
-      <img src="assets/cody-banner-01-01.jpg" class="guide-portrait" alt="Cody Christensen, fishing guide">
+      <div class="guide-visuals">
+        <img src="assets/captain-cody.jpg" class="guide-portrait" alt="Captain Cody Christensen with a Rainy Lake northern pike">
+        <img src="assets/the-boat.jpg" class="boat" alt="2021 Ranger 1880 · 200hp Yamaha">
+        <figcaption>The 2021 Ranger 1880 · 200hp Yamaha — rigged and ready.</figcaption>
+      </div>
       <div class="guide-body">
         <p class="pull">“What I love the most about guiding is watching a client catch the biggest fish of their life. I love the <em>smiles on their faces.</em>”</p>
         <p>Cody has guided on Rainy Lake and the Rainy River for thirty-two seasons. He is a Coast Guard–licensed Captain running a 2021 Ranger 1880 with a 200 hp Yamaha, top-of-the-line electronics, and Fenwick rods paired with President reels — all provided.</p>
